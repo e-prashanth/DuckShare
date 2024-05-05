@@ -5,7 +5,7 @@ from bson.objectid import ObjectId
 from pymongo import MongoClient
 
 
-MongoURL = 'mongodb://localhost:27017/'
+MongoURL = 'mongodb+srv://edeprashanth:Zpmr00ME8U0eqMpo@cluster0.yfyrqet.mongodb.net/'
 
 def getClient():
     client = MongoClient(MongoURL)
@@ -15,6 +15,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def HomePage():
+    print(MongoURL)
     return render_template('index.html')
 
 @app.route('/api/add-file', methods=['POST'])

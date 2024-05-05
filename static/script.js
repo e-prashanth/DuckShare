@@ -27,7 +27,7 @@ async function handleGenerationOftheCode() {
     formData.append('file', selectedFile);
 
     try {
-        const response = await fetch('/api/add-file', {
+        const response = await fetch('https://animated-chainsaw-9pqgq5567jjf99rx-5000.app.github.dev/api/add-file', {
             method: "POST",
             body: formData // Use FormData object to send file data
         });
@@ -53,14 +53,14 @@ async function afterCodeGeneration(id,fileName){
 async function handleFileDownload() {
     const code = document.getElementById('basic-url').value;
     try {
-        const response = await fetch(`/file/${code}`);
+        const response = await fetch(`https://animated-chainsaw-9pqgq5567jjf99rx-5000.app.github.dev/file/${code}`);
         const data = await response.json();
         if (response.status == 200) {
             console.log("The File name is:", data.fileName);
             const confirmDownload = confirm(`Do you want to download "${data.fileName}"?`);
             if (confirmDownload) {
                 try {
-                    const downloadResponse = await fetch(`/download/Uploads/${data.fileName}`);
+                    const downloadResponse = await fetch(`https://animated-chainsaw-9pqgq5567jjf99rx-5000.app.github.dev/download/Uploads/${data.fileName}`);
                     const blob = await downloadResponse.blob();
                     const url = window.URL.createObjectURL(blob);
                     const a = document.createElement('a');
