@@ -96,3 +96,7 @@ def download_file(file_path):
 @app.route('/getfiles/<fileData>')
 def getFiles(fileData):
     return render_template("aftercode.html",fileData['fileName'])
+
+
+if __name__ == __main__:
+    app.run(host='0.0.0.0',port=5000)
