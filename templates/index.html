@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/static/style.css" />
+    <title>Duck Share</title>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/static/script.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navconatiner">
+      <img
+        src="/static/logo.png"
+        height="50px"
+        width="50px"
+        class="logoImage"
+      />
+      <h1>Duck.Share</h1>
+    </nav>
+    <div class="Container">
+      <h1>Share A File to the Duck 🦆</h1>
+      <div class="container-fluid MainContainer">
+        <div class="FileSharingContianer" onclick="selectFile()">
+          <div class="dotedLineFileContainer">
+            <img src="/static/plus_100_orange.png" id="PlusImage" />
+            <h4 id="FileText">Select A file</h4>
+            <input type="file" id="fileInput" style="display: none" />
+          </div>
+        </div>
+        <div class="ContainerAboutSharing">
+          <h1>Share files directly from<br />your device to anywhere</h1>
+          <p>
+            Send files of any size directly from your device without<br />
+            ever storing anything online.
+          </p>
+        </div>
+      </div>
+      <div class="ButtonsContinaer" id="ButtonsContinaer" style="display: none;">
+        <button type="button" class="buttons btn btn-success" onclick="handleGenerationOftheCode()">Generate the Code</button>
+        <button type="button" class="buttons btn btn-danger" onclick="window.location.reload()">Abort the Duck</button>
+      </div>
+      <div class="Container1">
+        <h1>Download a File Using the Code</h1>
+        <div class="mt-3 DownloadContianer">
+          <div class="input-group input-group-lg">
+            <span class="input-group-text" id="basic-addon3">http://localhost:5000/file/</span>
+            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3 basic-addon4">
+          </div>
+          <button type="button" class="buttons btn btn-success" onclick="handleFileDownload()">Download</button>
+        </div>
+        
+      </div>
+    </div>
+    
+  </body>
+</html>
